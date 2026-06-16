@@ -4,7 +4,8 @@
   "description": "Implements size-based squeezing, movement cost, and region-based crawlspace logic.",
   "version": "1.0.2",
   "system": [
-    "dnd5e"
+    "dnd5e",
+    "pf2e"
   ],
   "compatibility": {
     "minimum": "13",
