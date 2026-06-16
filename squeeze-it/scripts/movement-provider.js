@@ -27,6 +27,18 @@ export function registerMovementBehaviorPatch() {
     if (comparison === "unknown") return effects;
     if (comparison === "smaller") return [];
     if (comparison === "equal") return effects;
+    // for pf2e, if the creature is only one size larger
+    if (comparison === "oneLarger") 
+    {
+      // and this is regular difficult terrain
+      if (effects.difficulty === 2)
+      {
+        // treat it as greater difficult terrain
+        return [{ name: "difficulty", difficulty: 3 }]
+      }
+      // else make it impassible
+      return [{ name: "difficulty", difficulty: Infinity }]
+    }
     if (comparison === "larger") return [{ name: "difficulty", difficulty: Infinity }];
   };
 
