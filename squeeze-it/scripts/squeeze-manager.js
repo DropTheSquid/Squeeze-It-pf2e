@@ -8,6 +8,7 @@ export class SqueezeManager {
 
     if (actorSize < targetSize) return "smaller";
     if (actorSize === targetSize) return "equal";
+    if (game.system.id === "pf2e" && actorsize - targetsize === 1) return "oneLarger";
     return "larger";
   }
 }
